@@ -6,7 +6,8 @@ import { ObjetosLiterales } from "./typescript/ObjetosLiterales"
 import { TyposBasicos } from "./typescript/TyposBasicos"
  */
 
-import { Usuario } from "./components/Usuario"
+/* import { Usuario } from "./components/Usuario" */
+import { Formulario } from './components/Formulario';
 
 const App = () => {
   return (
@@ -22,7 +23,8 @@ const App = () => {
       {/* <ContadorConHooks /> */}
 
       {/* <Login /> */}
-      <Usuario />
+      {/* <Usuario /> */}
+      <Formulario />
 
     </div>
   )

@@ -1,20 +1,10 @@
-import React, { useEffect } from 'react';
-import { reqResApi } from '../api/reqRes';
-import { ReqResListado, User } from '../interfaces/reqRes';
-import { useState } from 'react';
+
+import { useUsuarios } from '../hooks/useUsuarios';
+import { User } from '../interfaces/reqRes';
 
 export const Usuario = () => {
 
-    const [usuarios, setUsuarios] = useState<User[]>([]);
-
-    useEffect(() => {
-        reqResApi.get<ReqResListado>('/users')
-            .then(resp => {
-                setUsuarios(resp.data.data)
-            })
-            .catch(console.log)
-
-    }, []);
+    const { usuarios, paginaAnterior, paginaSiguiente } = useUsuarios();
 
     const renderItem = ({ id, first_name, last_name, email, avatar }: User) => {
         return (
@@ -54,6 +44,16 @@ export const Usuario = () => {
             </table>
 
             <button
+                onClick={paginaAnterior}
+                className="btn btn-primary"
+            >
+                anterior
+            </button>
+
+            &nbsp;
+
+            <button
+                onClick={paginaSiguiente}
                 className="btn btn-primary"
             >
                 Siguiente

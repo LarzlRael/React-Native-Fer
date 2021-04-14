@@ -7,6 +7,8 @@ import { SettingsScreens } from '../screens/SettingsScreens';
 import { useWindowDimensions, Image, View, Text, TouchableOpacity } from 'react-native';
 
 import { styles } from '../theme/appTehem';
+import { Tabs } from './Tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 
 const Drawer = createDrawerNavigator();
@@ -22,7 +24,7 @@ export const MenuLateral = () => {
             drawerContent={(props) => <MenuInterno {...props} />}
         >
             {/* Just can be screens */}
-            <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+            <Drawer.Screen name="Tabs" component={Tabs} />
             <Drawer.Screen name="SettingsScreens" component={SettingsScreens} />
         </Drawer.Navigator>
     );
@@ -43,16 +45,18 @@ export const MenuInterno =
                 {/* Opciones de menu */}
                 <View style={styles.menuContainer}>
                     <TouchableOpacity
-                        style={styles.menuBottom}
-                        onPress={() => navigation.navigate('StackNavigator')}
-                        >
-                        <Text style={styles.menuTexto}>Navegacion</Text>
+                        style={{ ...styles.menuBottom, flexDirection: 'row' }}
+                        onPress={() => navigation.navigate('Tabs')}
+                    >
+                        <Icon name="compass-outline" size={23} color="black" />
+                        <Text>Navegacion</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        style={styles.menuBottom}
+                        style={{ ...styles.menuBottom, flexDirection: 'row' }}
                         onPress={() => navigation.navigate('SettingsScreens')}
-                        >
+                    >
+                        <Icon name="cog-outline" size={23} color="black" />
                         <Text style={styles.menuTexto}>Ajustes </Text>
                     </TouchableOpacity>
                 </View>

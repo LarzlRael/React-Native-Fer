@@ -1,8 +1,10 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/self-closing-comp */
 import React, { useEffect } from 'react';
 import { View, Text, Button, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-
-import { styles } from '../theme/appTehem';
+import { styles, colors } from '../theme/appTehem';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 
 interface Props extends DrawerScreenProps<any, any> { };
@@ -12,10 +14,15 @@ export const Pagina1Screen = ({ navigation }: Props) => {
     useEffect(() => {
         navigation.setOptions({
             headerLeft: () => (
-                <Button
-                    title="Menu"
+                <TouchableOpacity
+                    style={{ marginLeft: 10 }}
                     onPress={() => navigation.toggleDrawer()}
-                />
+                >
+                    <Icon
+                        name="menu-outline"
+                        size={35}
+                        color={colors.primary} />
+                </TouchableOpacity>
             )
         });
     }, []);
@@ -34,9 +41,15 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                     style={{ ...styles.botonGrande, backgroundColor: '#5856d6' }}
                     onPress={() => navigation.navigate('PersonaScreen', {
                         id: 1,
-                        nombre: 'Pedro'
+                        nombre: 'Pedro',
                     })}>
+                    <Icon
+                        name="body-outline"
+                        color="white"
+                        size={35}
+                    />
                     <Text style={styles.botonGrandeText} >Pedro</Text>
+
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -45,6 +58,11 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                         id: 2,
                         nombre: 'Maria'
                     })}>
+                    <Icon
+                        name="woman-outline"
+                        color="white"
+                        size={35}
+                    />
                     <Text style={styles.botonGrandeText} >Maria</Text>
                 </TouchableOpacity>
             </View>

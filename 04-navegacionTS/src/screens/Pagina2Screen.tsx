@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/core';
 import React, { useEffect } from 'react';
 import { View, Text, Button } from 'react-native';
-import { styles } from '../theme/appTehem';
+import { styles } from '../theme/appTheme';
 
 export const Pagina2Screen = () => {
 
@@ -15,7 +15,7 @@ export const Pagina2Screen = () => {
     }, [])
 
     return (
-        <View style={styles.globalmargin}>
+        <View style={styles.globalMargin}>
             <Text style={styles.title}>Pagina2 screen</Text>
 
             <Button

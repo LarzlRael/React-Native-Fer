@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Platform, Text } from 'react-native';
+import { Platform } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -10,7 +10,7 @@ import { Tab1Screen } from '../screens/Tab1Screen';
 /* import { Tab3Screen } from '../screens/Tab3Screen'; */
 import { StackNavigator } from './StackNavigator';
 import { TopTabNavigator } from './TopTabNagitator';
-import { colors } from '../theme/appTehem';
+import { colors } from '../theme/appTheme';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -40,7 +40,7 @@ const TabsIOS = () => {
             }}
             screenOptions={
                 ({ route }) => ({
-                    tabBarIcon: ({ color, focused }) => {
+                    tabBarIcon: ({ color }) => {
 
                         let iconName: string = '';
 
@@ -79,11 +79,11 @@ const TabsAndroid = () => {
         <BottomTabAndroid.Navigator
             sceneAnimationEnabled
             barStyle={{
-                backgroundColor: colors.primary
+                backgroundColor: colors.primary,
             }}
             screenOptions={
                 ({ route }) => ({
-                    tabBarIcon: ({ color, focused }) => {
+                    tabBarIcon: ({ color }) => {
 
                         let iconName: string = '';
 
@@ -99,7 +99,7 @@ const TabsAndroid = () => {
                                 break;
 
                         }
-                        return <Icon name={iconName} size={40} color={color} />;
+                        return <Icon name={iconName} size={20} color={color} />;
                     },
                 })
             }

@@ -4,10 +4,10 @@ import React, { useEffect } from 'react';
 import { View, Text, Button, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import { styles, colors } from '../theme/appTehem';
+import { styles, colors } from '../theme/appTheme';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 
-interface Props extends DrawerScreenProps<any, any> { };
+interface Props extends DrawerScreenProps<any, any> {}
 
 export const Pagina1Screen = ({ navigation }: Props) => {
 
@@ -23,12 +23,12 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                         size={35}
                         color={colors.primary} />
                 </TouchableOpacity>
-            )
+            ),
         });
     }, []);
 
     return (
-        <View style={styles.globalmargin}>
+        <View style={styles.globalMargin}>
             <Text style={styles.title}>Pagina1 Screen</Text>
             <Button title="Ir a pagina 2 "
                 onPress={() => navigation.navigate('Pagina2Screen')}
@@ -56,7 +56,7 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                     style={{ ...styles.botonGrande, backgroundColor: '#ff9427' }}
                     onPress={() => navigation.navigate('PersonaScreen', {
                         id: 2,
-                        nombre: 'Maria'
+                        nombre: 'Maria',
                     })}>
                     <Icon
                         name="woman-outline"

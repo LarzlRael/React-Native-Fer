@@ -5,7 +5,7 @@ export const colors = {
 };
 
 export const styles = StyleSheet.create({
-    globalmargin: {
+    globalMargin: {
         marginHorizontal: 20,
     },
     title: {

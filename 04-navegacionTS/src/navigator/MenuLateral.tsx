@@ -2,11 +2,11 @@
 import React from 'react';
 
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentOptions, DrawerContentScrollView } from '@react-navigation/drawer';
-import { StackNavigator } from './StackNavigator';
+
 import { SettingsScreens } from '../screens/SettingsScreens';
 import { useWindowDimensions, Image, View, Text, TouchableOpacity } from 'react-native';
 
-import { styles } from '../theme/appTehem';
+import { styles } from '../theme/appTheme';
 import { Tabs } from './Tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 

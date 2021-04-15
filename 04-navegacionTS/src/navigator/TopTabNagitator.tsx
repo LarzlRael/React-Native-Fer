@@ -10,7 +10,7 @@ import { AlbumsScreen } from '../screens/AlbumsScreen';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { colors } from '../theme/appTehem';
+import { colors } from '../theme/appTheme';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createMaterialTopTabNavigator();

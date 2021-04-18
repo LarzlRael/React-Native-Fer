@@ -11,7 +11,6 @@ interface Props {
 
 export const HorizontalSlider = ({ title, movies }: Props) => {
 
-
     return (
         <View style={{ height: (title) ? 260 : 220 }} >
             {/* Peliculas populares */}
@@ -20,6 +19,7 @@ export const HorizontalSlider = ({ title, movies }: Props) => {
                     fontSize: 20,
                     fontWeight: 'bold',
                     marginLeft: 10,
+                    marginBottom:15,
                 }}>{title}</Text>}
 
             <FlatList

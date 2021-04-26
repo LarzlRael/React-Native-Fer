@@ -51,5 +51,10 @@ export const menuItems: MenuItem[] = [
         icon: 'download-outline',
         component: 'SliderScreen',
     },
+    {
+        name: 'Themes',
+        icon: 'flask-outline',
+        component: 'ChangeThemeScreen',
+    },
 ];
 

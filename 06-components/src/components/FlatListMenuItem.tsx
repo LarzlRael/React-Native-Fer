@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useContext } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { MenuItem } from '../interfaces/AppInterfaces';
@@ -31,7 +32,7 @@ export const FlatListMenuItem = ({ menuItem }: Props) => {
                     ...styles.itemText,
                     color: colors.text,
                 }}>{menuItem.name}</Text>
-                <View style={{ flex: 1, }} />
+                <View style={{ flex: 1 }} />
                 <Icon
                     name="chevron-forward-outline"
                     size={23}

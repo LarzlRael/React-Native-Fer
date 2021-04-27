@@ -36,7 +36,7 @@ export const TextInputScreen = () => {
                         autoCorrect={false}
                         autoCapitalize="words"
                         onChangeText={(value) => onChange(value, 'name')}
-                        placeholderTextColor={colors.dividerColor}
+                        placeholderTextColor={dividerColor}
 
                     />
                     <TextInput

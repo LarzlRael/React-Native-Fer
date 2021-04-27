@@ -1,7 +1,7 @@
 
 
 import React, { createContext, useEffect, useReducer } from 'react';
-import { Appearance, AppState, useColorScheme } from 'react-native';
+import { Appearance, AppState } from 'react-native';
 import { ThemeState, themeReducer, lightTheme, darkTheme } from './ThemeReducer';
 
 interface ThemeContextProps {
@@ -15,13 +15,13 @@ export const ThemeContext = createContext({} as ThemeContextProps);
 
 export const ThemeProvider = ({ children }: any) => {
 
-    /* Hook to get the colorScheme 
+    /* Hook to get the colorScheme
     const colorScheme = useColorScheme();
     */
 
     const [theme, dispatch] = useReducer(themeReducer,
         (Appearance.getColorScheme() === 'dark' ? darkTheme : lightTheme)); // Todo i need load the global theme phone
-    /* 
+    /*
     only works in IOS at moment
         useEffect(() => {
             (colorScheme === 'light') ? setLightTheme() : setDarkTheme();
@@ -59,5 +59,5 @@ export const ThemeProvider = ({ children }: any) => {
         }}>
             {children}
         </ThemeContext.Provider>
-    )
-}
+    );
+};

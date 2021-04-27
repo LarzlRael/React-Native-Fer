@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useContext } from 'react';
 
 import { ThemeContext } from '../context/ThemeContext';

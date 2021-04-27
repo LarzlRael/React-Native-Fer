@@ -33,7 +33,7 @@ export const darkTheme: ThemeState = {
         text: 'white',
         border: 'black:',
         notification: 'teal',
-    }
+    },
 };
 
 export const themeReducer = (state: ThemeState, action: ThemeAction): ThemeState => {
@@ -47,4 +47,4 @@ export const themeReducer = (state: ThemeState, action: ThemeAction): ThemeState
             return state;
 
     }
-}
+};

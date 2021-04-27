@@ -18,15 +18,15 @@ export const Animation101 = () => {
                 backgroundColor: colors.primary,
                 opacity: opacity,
                 transform: [{
-                    translateY: position
-                }]
+                    translateY: position,
+                }],
             }} />
             <Button
                 color={colors.primary}
                 title="FadeIN"
                 onPress={() => {
                     fadeIn();
-                    startMovingPosition(100)
+                    startMovingPosition(100);
                 }}
             />
             <Button
@@ -48,5 +48,5 @@ const styles = StyleSheet.create({
 
         width: 150,
         height: 150,
-    }
+    },
 });

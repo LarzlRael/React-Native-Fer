@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ActivityIndicator } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-import { RootStackParams } from '../navigator/StackNavigator';
+import { RootStackParams } from '../navigator/Tab1';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 1000,
     },
     backButton: {
-        /* position: 'absolute',
+    /*     position: 'absolute',
         left: 20, */
     },
     pokemonName: {

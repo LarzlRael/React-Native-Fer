@@ -1,6 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { Image, ActivityIndicator, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Image, ActivityIndicator, View, Text } from 'react-native';
+
 import { styles } from '../theme/appTheme';
 import { usePokemonPaginator } from '../hook/usePokemonPaginator';
 import { FlatList } from 'react-native-gesture-handler';
@@ -9,9 +10,7 @@ import { PokemonCard } from '../components/PokemonCard';
 
 export const HomeScreen = () => {
 
-    const { top } = useSafeAreaInsets();
-    const { simplePokemonList, loadPokemons, isLoading } = usePokemonPaginator();
-
+    const { simplePokemonList, loadPokemons } = usePokemonPaginator();
 
     return (
         <>
@@ -34,6 +33,14 @@ export const HomeScreen = () => {
                         <PokemonCard pokemon={item} />
                     )}
 
+                    // Header
+                    ListHeaderComponent={(
+                        <Text style={{
+                            ...styles.title,
+                            ...styles.globalMargin,
+
+                        }}> PokeDex</Text>
+                    )}
 
                     // infinte scroll
                     onEndReached={loadPokemons}
@@ -44,7 +51,7 @@ export const HomeScreen = () => {
                             height: 100,
                         }}
                             size={20}
-                            color='grey' />}
+                            color="grey" />}
                     showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}
                 />

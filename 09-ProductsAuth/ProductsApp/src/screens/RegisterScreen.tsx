@@ -1,10 +1,13 @@
-import React from 'react';
-import { View, Text, KeyboardAvoidingView, Platform, Keyboard } from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import { View, Text, KeyboardAvoidingView, Platform, Keyboard, Alert } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { loginStyles } from '../theme/loginTheme';
 import { WhiteLogo } from '../components/WhiteLogo';
 import { useForm } from '../hooks/useForm';
 import { StackScreenProps } from '@react-navigation/stack';
+import { AuthContext } from '../context/AuthContext';
+import { RegisterData } from '../interfaces/appInterfaces';
+
 
 
 
@@ -12,13 +15,34 @@ interface Props extends StackScreenProps<any, any> { }
 
 export const RegisterScreen = ({ navigation }: Props) => {
 
+    const { singUp, errorMessage, removeError } = useContext(AuthContext);
+
+    useEffect(() => {
+        if (errorMessage.length === 0) {
+            return;
+        } else {
+            Alert.alert('Registro Incorrecto', errorMessage, [
+                {
+                    text: 'ok',
+                    onPress: removeError,
+                },
+            ]);
+        }
+    }, [errorMessage, removeError]);
+
     const { email, password, name, onChange } = useForm({
         email: '',
         password: '',
         name: '',
     });
     const onRegister = () => {
-        console.log({ email, password });
+
+        const newUser: RegisterData = {
+            correo: email,
+            password,
+            nombre: name,
+        };
+        singUp(newUser);
         Keyboard.dismiss();
     };
     return (
@@ -35,7 +59,7 @@ export const RegisterScreen = ({ navigation }: Props) => {
 
                     <Text style={loginStyles.title}>Registro</Text>
 
-                    <Text style={loginStyles.label}>Email:</Text>
+                    <Text style={loginStyles.label}>Nombre:</Text>
                     <TextInput
                         placeholder="Ingrese su nombre: "
                         placeholderTextColor="rgba(255,255,255,.4)"

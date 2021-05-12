@@ -1,12 +1,43 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useContext } from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { AuthContext } from '../context/AuthContext';
 
 export const ProtectedScreen = () => {
+
+    const { logOut, user, token } = useContext(AuthContext);
+
     return (
-        <View>
+        <View style={styles.container}>
+            <Text style={styles.container}>
+                ProtectedScreen
+            </Text>
+
+            <Button
+                title="logout"
+                color="#5856d6"
+                onPress={logOut}
+            />
+
             <Text>
-                ProtectedScreen 
+                {JSON.stringify(user, null, 5)}
+            </Text>
+            <Text>
+                Token : {token}
             </Text>
         </View>
     );
 };
+
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    title: {
+        fontSize: 20,
+        marginBottom: 20,
+    }
+});
